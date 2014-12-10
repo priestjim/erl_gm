@@ -12,6 +12,11 @@ opt({resize, Width, Height}) ->
     {width, Width},
     {height, Height}
   ]};
+opt({resize, Width, Height, no_upsampling}) ->
+  {"-resize", ":widthx:height\\>", [
+    {width, Width},
+    {height, Height}
+  ]};
 opt({output_directory, Dir}) ->
   {"-output-directory", ":output_directory", [{output_directory, Dir}]};
 opt(create_directories) ->
